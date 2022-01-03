@@ -1,15 +1,20 @@
 .nav {
-  height: 56px;
+  height: 60px;
   position: fixed;
   z-index: 9;
   top: 0;
-  background-color: #fff;
-  border-bottom: 1px solid #222;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 13px 6px #0000001a;
   display: flex;
   align-items: center;
   width: calc(100% - 20px);
+
   padding: 0 10px;
   justify-content: space-between;
+}
+.nav a {
+  text-decoration: none !important;
+  color: #000;
 }
 .navLeft {
   display: flex;
@@ -19,4 +24,19 @@
 .navLeft img {
   margin-right: 6px;
   width: 35px;
+}
+
+/*  Existing  user chip */
+.userNavChip {
+  position: relative;
+}
+.userMenu {
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  overflow: hidden;
+  border-radius: 6px;
+  width: 10em;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 13px 6px #0000001a;
 }

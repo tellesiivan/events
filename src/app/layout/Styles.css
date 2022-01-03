@@ -10,9 +10,17 @@ body {
   background-color: #fff;
   font-family: "Roboto Condensed", sans-serif;
 }
+a {
+  text-decoration: none !important;
+}
+.header_home {
+  height: 30em;
+  background-image: url("https://www.supercars.net/blog/wp-content/uploads/2018/10/Workshop-5001-Porsche-restoration-05.jpg");
+  background-position: center;
+  background-size: cover;
+}
 .main {
-  margin-top: 63px;
-  padding: 10px;
+  margin-top: 60px;
 }
 
 /* event items */
@@ -54,6 +62,19 @@ body {
   font-family: "Roboto Condensed", sans-serif !important;
   font-size: 0.9em !important;
 }
+.sidebarAttendee {
+  margin: 5px 5px 0px 0px !important;
+  font-family: "Roboto Condensed", sans-serif !important;
+  background-color: #333e46 !important;
+  font-size: 0.87em !important;
+  color: #ffffff !important;
+}
+.inheritBCevent {
+  font-family: "Roboto Condensed", sans-serif !important;
+  background-color: #333e46 !important;
+  font-size: 0.87em !important;
+  color: #ffffff !important;
+}
 .csmBtns {
   color: #ffffff !important;
   border-color: #2e836c !important;
@@ -90,7 +111,22 @@ body {
 .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
   font-family: "Roboto Condensed", sans-serif !important;
 }
+.css-10hburv-MuiTypography-root {
+  font-family: "Roboto Condensed", sans-serif !important;
+}
+.css-cveggr-MuiListItemIcon-root {
+  min-width: 40px !important;
+}
 
 .mainColor {
   color: #1d785f !important;
+}
+.activeNav {
+  color: #1d785f !important;
+}
+.accentColor {
+  color: #a5a5a5 !important;
+}
+.avatar {
+  width: fit-content !important;
 }

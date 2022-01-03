@@ -1,18 +1,18 @@
-import { Avatar, Button } from "@mui/material";
+import { Avatar, Button, IconButton } from "@mui/material";
+import { Link } from "react-router-dom";
+import DeleteIcon from "@mui/icons-material/Delete";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import PlaceIcon from "@mui/icons-material/Place";
 import Chip from "@mui/material/Chip";
 import EventListAttendee from "./EventListAttendee";
 
-export default function EventListItem({ data }) {
-  console.log(data);
-
+export default function EventListItem({ data, eventSelection, deleteEvent }) {
   return (
     <div className="event-item">
       <div className="event-item-left">
         <Avatar
-          alt="Remy Sharp"
-          src="https://d23abykesh9wm6.cloudfront.net/t_smart_auto_crop/https://d1sdeqoxcfgxl0.cloudfront.net/images/original/7af6cdd758419cf989a0ada620b0981ab5e3dc8965194a5d75d18573.jpg"
+          alt={`${data.hostedBy} Avatar Image`}
+          src={data.hostPhotoURL}
           sx={{ width: 46, height: 46 }}
         />
       </div>
@@ -29,7 +29,7 @@ export default function EventListItem({ data }) {
           <Chip
             icon={<PlaceIcon />}
             onClick={() => {}}
-            label={`${data.venue}`}
+            label={`${data.address}`}
             size="small"
             className="inheritFont inheritBC"
           />
@@ -43,9 +43,22 @@ export default function EventListItem({ data }) {
         )}
         <div className="event-item-act event-space">
           <span>{data.description}</span>
-          <Button size="small" className="inheritFont mainColor">
-            View Details
-          </Button>
+          <Link to={`events/${data.id}`}>
+            <Button size="small" className="inheritFont mainColor">
+              Details
+            </Button>
+          </Link>
+
+          <IconButton
+            aria-label="delete"
+            size="small"
+            className="inheritFont mainColor"
+            onClick={() => {
+              deleteEvent(data.id);
+            }}
+          >
+            <DeleteIcon fontSize="small" className="accentColor" />
+          </IconButton>
         </div>
       </div>
     </div>
