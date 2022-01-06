@@ -12,6 +12,7 @@ import Divider from "@mui/material/Divider";
 import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlined";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+import { Link } from "react-router-dom";
 
 export default function ExistingUserNav({ logOut }) {
   const [show, setShow] = useState(false);
@@ -27,7 +28,7 @@ export default function ExistingUserNav({ logOut }) {
         }
         label="Mescudi911"
         size="medium"
-        className="inheritFont inheritBC"
+        className="inheritFont existingBc"
         onClick={() => {
           setShow(!show);
         }}
@@ -47,14 +48,20 @@ export default function ExistingUserNav({ logOut }) {
                     <ListItemText primary="Profile" />
                   </ListItemButton>
                 </ListItem>
-                <ListItem disablePadding>
-                  <ListItemButton>
-                    <ListItemIcon>
-                      <AddCircleOutlineOutlinedIcon size="small" />
-                    </ListItemIcon>
-                    <ListItemText primary="Create Event" />
-                  </ListItemButton>
-                </ListItem>
+                <Link to="/create">
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        setShow(false);
+                      }}
+                    >
+                      <ListItemIcon>
+                        <AddCircleOutlineOutlinedIcon size="small" />
+                      </ListItemIcon>
+                      <ListItemText primary="Create Event" />
+                    </ListItemButton>
+                  </ListItem>
+                </Link>
               </List>
             </nav>
             <Divider />
@@ -70,6 +77,7 @@ export default function ExistingUserNav({ logOut }) {
                       classes="inheritFont"
                       onClick={() => {
                         logOut();
+                        setShow(false);
                       }}
                     />
                   </ListItemButton>

@@ -3,15 +3,16 @@
   flex-direction: row;
 }
 .content {
-  width: calc(100% - 280px);
+  width: calc(100% - 300px);
 }
 .sidebar {
-  background-color: #171a1d;
+  background-color: #f7f7f7;
+  border-left: 1px solid #000;
   height: 100vh;
   position: fixed;
   right: 0;
-  min-width: 280px;
-  max-width: 280px;
+  min-width: 300px;
+  max-width: 300px;
   overflow: scroll;
 }
 .sidebar::-webkit-scrollbar {
@@ -39,8 +40,7 @@
 .headerImg {
   position: relative;
   height: 18em;
-  background-image: url("https://blog.wheelsbywovka.com/wp-content/uploads/2019/06/MG_8930-1024x576.jpg");
-  background-position: top center;
+  background-position: center;
   background-size: cover;
 }
 .headerImgAb {
@@ -64,12 +64,10 @@
   margin: 10px 0 !important;
   font-size: 1.2em;
 }
-.headerDetails span {
-  margin-bottom: 10px !important;
-}
+
 .headerActions {
   height: 5em;
-  background-color: #232b31;
+  background-color: #060707;
   display: flex;
   justify-content: space-between;
   padding: 0 10px;

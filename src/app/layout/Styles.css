@@ -13,8 +13,11 @@ body {
 a {
   text-decoration: none !important;
 }
+.dash {
+  height: calc(100vh - 44px);
+}
 .header_home {
-  height: 30em;
+  height: 25em;
   background-image: url("https://www.supercars.net/blog/wp-content/uploads/2018/10/Workshop-5001-Porsche-restoration-05.jpg");
   background-position: center;
   background-size: cover;
@@ -71,14 +74,14 @@ a {
 }
 .inheritBCevent {
   font-family: "Roboto Condensed", sans-serif !important;
-  background-color: #333e46 !important;
+  background-color: #27292a !important;
   font-size: 0.87em !important;
   color: #ffffff !important;
 }
 .csmBtns {
   color: #ffffff !important;
-  border-color: #2e836c !important;
-  background-color: #1d785f !important;
+  border-color: #5a5a5a !important;
+  background-color: #000000 !important;
 }
 .inheritBC {
   background-color: #eeeeee !important;
@@ -112,21 +115,51 @@ a {
   font-family: "Roboto Condensed", sans-serif !important;
 }
 .css-10hburv-MuiTypography-root {
+  font-size: 0.9em !important;
   font-family: "Roboto Condensed", sans-serif !important;
 }
 .css-cveggr-MuiListItemIcon-root {
   min-width: 40px !important;
 }
-
+.status {
+  margin-right: 0.5em !important;
+}
 .mainColor {
-  color: #1d785f !important;
+  color: #464c47 !important;
 }
 .activeNav {
-  color: #1d785f !important;
+  color: #464c47 !important;
 }
 .accentColor {
   color: #a5a5a5 !important;
 }
 .avatar {
   width: fit-content !important;
+}
+.porscheC2Bc {
+  background-color: #fff8d7 !important;
+}
+.porscheA4Bc {
+  background-color: #1d2b2c !important;
+  color: #fff !important;
+}
+
+/* event dashboard */
+.dash-left {
+  height: 100%;
+  overflow-y: scroll;
+}
+.dash-left::-webkit-scrollbar {
+  display: none;
+}
+.event_List {
+  margin: 10px;
+}
+.dash-right {
+  border-left: 1px solid #000;
+}
+
+/*  */
+.existingBc {
+  background-color: #e0e7ff !important;
 }

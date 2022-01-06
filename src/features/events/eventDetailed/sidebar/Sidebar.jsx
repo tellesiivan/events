@@ -2,29 +2,26 @@ import classes from "./sidebar.module.css";
 import Avatar from "@mui/material/Avatar";
 import Chip from "@mui/material/Chip";
 
-export default function Sidebar() {
+export default function Sidebar({ attendees }) {
   return (
     <div>
       <div className={classes.heading}>
         <span>
-          <Chip label="2" className={classes.chip} /> People Going.
+          <Chip
+            label={attendees.length}
+            className={classes.chip}
+            size="small"
+          />
+          People are going
         </span>
       </div>
       <div className={classes.going}>
-        <div className={classes.goingItem}>
-          <Avatar
-            alt="Natacha"
-            src="https://uploads.carandclassic.co.uk/uploads/cars/porsche/12122809.jpg"
-          />
-          <p>Wes911</p>
-        </div>
-        <div className={classes.goingItem}>
-          <Avatar
-            alt="Natacha"
-            src="https://wheelfront.com/wp-content/uploads/formidable/8/bmw-f80-m3-with-bbs-rs-wheels-3.jpg"
-          />
-          <p>BlueF80M3</p>
-        </div>
+        {attendees.map((attendee) => (
+          <div className={classes.goingItem} key={attendee.id}>
+            <Avatar alt={attendee.name} src={attendee.photoURL} />
+            <p>{attendee.name}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

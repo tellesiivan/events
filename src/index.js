@@ -1,16 +1,22 @@
 import React from "react";
+import ScrollToTop from "./app/layout/ScrollToTop";
 import ReactDOM from "react-dom";
 import "./app/layout/Styles.css";
 import App from "./app/layout/App";
 import { BrowserRouter as Browser } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./app/store/configureStore";
 
 const rootEl = document.getElementById("root");
 
 function render() {
   ReactDOM.render(
-    <Browser>
-      <App />
-    </Browser>,
+    <Provider store={store}>
+      <Browser>
+        <ScrollToTop />
+        <App />
+      </Browser>
+    </Provider>,
     rootEl
   );
 }

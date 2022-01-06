@@ -5,8 +5,12 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import PlaceIcon from "@mui/icons-material/Place";
 import Chip from "@mui/material/Chip";
 import EventListAttendee from "./EventListAttendee";
+import { useDispatch } from "react-redux";
+import { eventActions } from "../../../app/store/events/eventSlice";
 
-export default function EventListItem({ data, eventSelection, deleteEvent }) {
+export default function EventListItem({ data }) {
+  const dispatch = useDispatch();
+
   return (
     <div className="event-item">
       <div className="event-item-left">
@@ -54,7 +58,7 @@ export default function EventListItem({ data, eventSelection, deleteEvent }) {
             size="small"
             className="inheritFont mainColor"
             onClick={() => {
-              deleteEvent(data.id);
+              dispatch(eventActions.deleteEvent({ id: data.id }));
             }}
           >
             <DeleteIcon fontSize="small" className="accentColor" />
