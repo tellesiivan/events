@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { authActions } from "../../app/store/auth/authSlice";
+import { useHistory } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Chip from "@mui/material/Chip";
 import classes from "./nav.module.css";
@@ -14,8 +17,18 @@ import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOu
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import { Link } from "react-router-dom";
 
-export default function ExistingUserNav({ logOut }) {
+export default function ExistingUserNav() {
   const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const { currentUser } = useSelector((store) => store.authMain);
+
+  function logOut() {
+    dispatch(authActions.logOutUser());
+    setShow(false);
+    history.push("/");
+  }
 
   return (
     <div className={classes.userNavChip}>
@@ -23,10 +36,13 @@ export default function ExistingUserNav({ logOut }) {
         avatar={
           <Avatar
             alt="Natacha"
-            src="https://images.opumo.com/wordpress/wp-content/uploads/2018/08/Opumo-Magazine-Banner-RETINA-1-10.jpg"
+            src={
+              currentUser.photoURL ||
+              "https://images.opumo.com/wordpress/wp-content/uploads/2018/08/Opumo-Magazine-Banner-RETINA-1-10.jpg"
+            }
           />
         }
-        label="Mescudi911"
+        label={currentUser.email}
         size="medium"
         className="inheritFont existingBc"
         onClick={() => {
@@ -75,10 +91,7 @@ export default function ExistingUserNav({ logOut }) {
                     <ListItemText
                       primary="Log out"
                       classes="inheritFont"
-                      onClick={() => {
-                        logOut();
-                        setShow(false);
-                      }}
+                      onClick={logOut}
                     />
                   </ListItemButton>
                 </ListItem>

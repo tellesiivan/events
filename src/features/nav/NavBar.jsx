@@ -1,19 +1,14 @@
 import React, { useState } from "react";
 import { Button } from "@mui/material";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 import classes from "./nav.module.css";
 import logo from "../../assets/logo.svg";
 import ExistingUserNav from "./ExistingUserNav";
 import NewUserNav from "./NewUserNav";
 
 export default function NavBar({ setFormOpen }) {
-  const history = useHistory();
-  const [auth, setAuth] = useState(false);
-
-  function logOut() {
-    setAuth(false);
-    history.push("/");
-  }
+  const { isAuthenticated } = useSelector((store) => store.authMain);
 
   return (
     <div className={classes.nav}>
@@ -29,7 +24,7 @@ export default function NavBar({ setFormOpen }) {
               Events
             </Button>
           </NavLink>
-          {auth && (
+          {isAuthenticated && (
             <NavLink to="/create" activeClassName="activeNav">
               <Button size="small" variant="none" className="inheritFont">
                 Create Event
@@ -39,11 +34,7 @@ export default function NavBar({ setFormOpen }) {
         </div>
       </div>
       <div className="nav-right">
-        {auth ? (
-          <ExistingUserNav logOut={logOut} />
-        ) : (
-          <NewUserNav setAuth={setAuth} />
-        )}
+        {isAuthenticated ? <ExistingUserNav /> : <NewUserNav />}
       </div>
     </div>
   );

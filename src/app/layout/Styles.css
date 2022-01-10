@@ -6,6 +6,7 @@
   padding: 0;
 }
 body {
+  height: 100%;
   margin: 0;
   background-color: #fff;
   font-family: "Roboto Condensed", sans-serif;
@@ -18,7 +19,7 @@ a {
 }
 .header_home {
   height: 25em;
-  background-image: url("https://www.supercars.net/blog/wp-content/uploads/2018/10/Workshop-5001-Porsche-restoration-05.jpg");
+  background-image: url("https://m1concourse.com/wp-content/uploads/2019/04/7E2A7742-e1555336421525.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -108,12 +109,17 @@ a {
   margin-left: 10px;
   min-width: fit-content;
 }
+.css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input {
+  font-family: "Roboto Condensed", sans-serif !important;
+  font-size: 0.98em !important;
+}
 .css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root::placeholder {
   font-family: "Roboto Condensed", sans-serif !important;
 }
 .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
   font-family: "Roboto Condensed", sans-serif !important;
 }
+
 .css-10hburv-MuiTypography-root {
   font-size: 0.9em !important;
   font-family: "Roboto Condensed", sans-serif !important;
@@ -125,10 +131,10 @@ a {
   margin-right: 0.5em !important;
 }
 .mainColor {
-  color: #464c47 !important;
+  color: #414141 !important;
 }
 .activeNav {
-  color: #464c47 !important;
+  color: #000000 !important;
 }
 .accentColor {
   color: #a5a5a5 !important;
